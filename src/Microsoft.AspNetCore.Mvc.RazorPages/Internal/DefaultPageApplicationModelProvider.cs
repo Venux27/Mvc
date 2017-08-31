@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure;
 using Microsoft.Extensions.Internal;
-using Microsoft.Extensions.Options;
 
 namespace Microsoft.AspNetCore.Mvc.RazorPages.Internal
 {
@@ -250,7 +249,7 @@ namespace Microsoft.AspNetCore.Mvc.RazorPages.Internal
                 return false;
             }
 
-            // Overriden methods from Object class, e.g. Equals(Object), GetHashCode(), etc., are not valid.
+            // Overridden methods from Object class, e.g. Equals(Object), GetHashCode(), etc., are not valid.
             if (methodInfo.GetBaseDefinition().DeclaringType == typeof(object))
             {
                 return false;

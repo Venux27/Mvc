@@ -57,7 +57,7 @@ namespace Microsoft.AspNetCore.Mvc
             var services = new ServiceCollection();
             services.AddSingleton<IHostingEnvironment>(GetHostingEnvironment());
 
-            // Register a mock implementation of each service, AddMvcServices should add another implemenetation.
+            // Register a mock implementation of each service, AddMvcServices should add another implementation.
             foreach (var serviceType in MutliRegistrationServiceTypes)
             {
                 var mockType = typeof(Mock<>).MakeGenericType(serviceType.Key);
@@ -437,6 +437,7 @@ namespace Microsoft.AspNetCore.Mvc
                             typeof(AuthorizationPageApplicationModelProvider),
                             typeof(DefaultPageApplicationModelProvider),
                             typeof(TempDataFilterPageApplicationModelProvider),
+                            typeof(ResponseCacheFilterApplicationModelProvider),
                         }
                     },
                 };
